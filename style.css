@@ -1,0 +1,361 @@
+:root {
+  --furia-red: #ff0000;
+  --furia-black: #000000;
+  --furia-dark: #0a0a0a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #fff;
+  color: white;
+}
+
+/* Estilo do site FURIA */
+.furia-header {
+  background-color: var(--furia-black);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--furia-red);
+}
+
+.furia-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.furia-logo span {
+  color: var(--furia-red);
+}
+
+.furia-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.furia-nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.furia-nav a:hover {
+  color: var(--furia-red);
+}
+
+.main-content {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(rgba(119, 119, 119, 0.7), rgba(0,0,0,0.7)), url('https://furia.gg/wp-content/uploads/2023/05/furia-hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 3rem;
+  border-radius: 5px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Chatbot */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.chatbot-toggle {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+}
+
+.chat-container {
+  width: 100%;
+  height: 500px;
+  background-color: #171717;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+}
+
+.chat-container.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chat-container.active ~ .chatbot-toggle {
+  display: none;
+}
+
+.chat-header {
+  background: linear-gradient(to right, #000000, #333333);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icon {
+  font-size: 1.75rem;
+}
+
+.header-text h1 {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.header-text p {
+  color: #999;
+  font-size: 0.875rem;
+}
+
+.status-badge {
+  background-color: #22c55e;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  animation: pulse 2s infinite;
+}
+
+.messages-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: #0a0a0a;
+}
+
+.message {
+  margin-bottom: 1rem;
+  max-width: 80%;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.message.user {
+  margin-left: auto;
+}
+
+.message-content {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.message.bot .message-content {
+  background-color: #fff;
+  color: var(--furia-black);
+  border-bottom-left-radius: 0;
+}
+
+.message.user .message-content {
+  background-color: #fff;
+  color: var(--furia-black);
+  border-bottom-right-radius: 0;
+}
+
+.message-time {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+.chat-input-container {
+  padding: 1rem;
+  border-top: 1px solid #333;
+  display: flex;
+  gap: 0.5rem;
+  background-color: #171717;
+}
+
+input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--furia-red);
+}
+
+button {
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+button:hover {
+  color: var(--furia-red);
+}
+
+.close-button {
+  background: var(--furia-red);
+  border: 1px solid red;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 5px;
+  line-height: 1;
+  position: relative;
+  left: 55px;
+  bottom: 7px;
+}
+
+.close-button:hover {
+  background-color: #fff;
+  color: var(--furia-red);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Seções do site */
+.teams-section {
+  padding: 3rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.team-card {
+  background-color: #fffefe;
+  border-radius: 8px;
+  position: relative;
+  left: 300px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.team-info {
+  padding: 1rem;
+}
+
+.team-info h3 {
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.team-info p {
+  color: #6e6e6e;
+  font-size: 0.9rem;
+}
+
+.footer {
+  background-color: var(--furia-black);
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+

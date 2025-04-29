@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FURIA Esports | Site Oficial</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Simulação do site da FURIA -->
+  <header class="furia-header">
+    <div class="furia-logo"> <img src="img/favicon-32x32.png" alt=""> FUR<span>IA</span></div>
+    <nav class="furia-nav">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Times</a></li>
+        <li><a href="#">Notícias</a></li>
+        <li><a href="#">Loja</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <div>
+        <img src="img/banner-furia.png" alt="">
+        <h1>JUNTE-SE À NAÇÃO FURIA</h1>
+        <p>O maior time de esports do Brasil em CS:GO, Valorant, League of Legends e mais</p>
+      </div>
+    </section>
+
+    <section class="teams-section">
+      <h2 class="section-title">NOSSOS TIMES</h2>
+      <div class="teams-grid">
+        <div class="team-card">
+          <img src="img/logo_furia_card350.png" alt="FURIA CS:GO">
+          <div class="team-info">
+            <h3>CS:GO</h3>
+            <p>Top 1 do Brasil e top 10 mundial</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="img/logo_furia_card350.png" alt="FURIA Valorant">
+          <div class="team-info">
+            <h3>Valorant</h3>
+            <p>Competindo no VCT Americas</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="img/logo_furia_card350.png" alt="FURIA LoL">
+          <div class="team-info">
+            <h3>League of Legends</h3>
+            <p>No CBLOL 2024</p>
+          </div>
+        </div>
+        <div class="team-card">
+          <img src="img/logo_furia_card350.png" alt="FURIA Kings League">
+          <div class="team-info">
+            <h3>Kings League</h3>
+            <p>Time Furia FC no futebol inovador</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <footer class="footer">
+    <p>© 2025 FURIA Esports. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Chatbot -->
+  <div class="chatbot-container">
+    <div class="chat-container" id="chatContainer">
+      <div class="chat-header">
+        <div class="header-content">
+          <div class="header-icon"><img src="img/favicon-32x32.png" alt="Logo FURIA"></div>
+          <div class="header-text">
+            <h1>FURIA Chat</h1>
+            <p>Chat com a Nação FURIA</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button class="close-button" id="closeButton">×</button>
+          <div class="status-badge">ONLINE</div>
+        </div>
+      </div>
+      
+      <div class="messages-container" id="messages"></div>
+      
+      <div class="chat-input-container">
+        <input type="text" id="messageInput" placeholder="Digite sua mensagem..." />
+        <button id="sendButton">➤</button>
+      </div>
+    </div>
+    
+    <!-- Botão Toggle -->
+    <button class="chatbot-toggle" id="chatbotToggle">💬</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
