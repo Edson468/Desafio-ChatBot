@@ -87,5 +87,6 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICE
 
 Desenvolvido por Edson Carvalho - edson4518@gmail.com
 
-[![GitHub]((https://github.com/Edson468))
-[![LinkedIn]((https://www.linkedin.com/in/edson-carvalho-213b051b1/))
+[GitHub](https://github.com/Edson468)
+[LinkedIn
+](https://www.linkedin.com/in/seu-perfil/)
